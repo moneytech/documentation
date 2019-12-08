@@ -26,7 +26,7 @@ Note that it may take a few seconds to get from stage 1 to stage 4. During that 
 
 ## Providing a custom Device Tree blob
 
-In order to compile a Device Tree source (`.dts`) file into a Device Tree blob (`.dtb`) file, the Device Tree compiler must be installed by running `sudo apt-get install device-tree-compiler`. The `dtc` command can then be used as follows:
+In order to compile a Device Tree source (`.dts`) file into a Device Tree blob (`.dtb`) file, the Device Tree compiler must be installed by running `sudo apt install device-tree-compiler`. The `dtc` command can then be used as follows:
 
 ```
 sudo dtc -I dts -O dtb -o /boot/dt-blob.bin dt-blob.dts
@@ -61,6 +61,8 @@ The `dt-blob.bin` is used to configure the binary blob (VideoCore) at boot time.
  - **pins_2b2** Pi 2 Model B rev 1.1; controls the SMPS via software I2C on 42 and 43.
  - **pins_3b1** Pi 3 Model B rev 1.0
  - **pins_3b2** Pi 3 Model B rev 1.2
+ - **pins_3bplus** Pi 3 Model B+
+ - **pins_3aplus** Pi 3 Model A+
  - **pins_pi0** The Pi Zero
  - **pins_pi0w** The Pi Zero W
  - **pins_cm** The Compute Module. The default for this is the default for the chip, so it is a useful source of information about default pull ups/downs on the chip.
@@ -104,7 +106,7 @@ The `dt-blob.bin` is used to configure the binary blob (VideoCore) at boot time.
       * `gp_clk`
       * `emmc`
       * `arm_jtag`
-   5. `drive_strength_ma`
+   5. `drive_strength_mA`
       The drive strength is used to set a strength for the pins. Please note that you can only specify a single drive strength for the bank. <8> and <16> are valid values.
 
 5. `pin_defines`
